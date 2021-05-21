@@ -1,0 +1,129 @@
+<div class="container">
+  <section class="calculadora">
+    <!-- Input e clear -->
+    <header class="top">
+      <div class="input-valor">
+        <span class="fontMenor">{{calculo}}</span>
+        <br>
+        <span>{{resultado}}</span>
+      </div>
+    </header>
+    <ul class="key">
+      <li (click)="clear()">AC</li>
+      <li>+/-</li>
+      <li>%</li>
+      <li (click)="setOperacao(3)" [(ngModel)]="operacao" value="/" ngDefaultControl class="operador">÷</li>
+      <li (click)="setValor(7)" value="7">7</li>
+      <li (click)="setValor(8)" value="8">8</li>
+      <li (click)="setValor(9)" value="9">9</li>
+      <li (click)="setOperacao(2)" [(ngModel)]="operacao" value="*" ngDefaultControl class="operador">x</li>
+      <li (click)="setValor(4)" value="4">4</li>
+      <li (click)="setValor(5)" value="7">5</li>
+      <li (click)="setValor(6)" value="6">6</li>
+      <li (click)="setOperacao(1)" [(ngModel)]="operacao" value="-" ngDefaultControl class="operador">-</li>
+      <li (click)="setValor(1)" value="1">1</li>
+      <li (click)="setValor(2)" value="2">2</li>
+      <li (click)="setValor(3)" value="3">3</li>
+      <li (click)="setOperacao(0)" [(ngModel)]="operacao" value="+" ngDefaultControl class="operador">+</li>
+      <li (click)="setValor(0)" value="0" class="verificar">0</li>
+      <li (click)="setValor(0,'.')" value=".">.</li>
+      <li (click)="calcular()" class="resultado">=</li>
+    </ul>
+  </section>
+</div>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 25px;
+  }
+
+  li {
+    list-style: none;
+  }
+
+  .container {
+    width: 290px;
+    text-align: center;
+    height: auto;
+    margin: 4px auto;
+  }
+
+  .calculadora {
+    width: 300px;
+    height: 560px;
+    margin: 0 auto;
+    padding: 2px;
+    background-color: #0097CB;
+  }
+
+  .fontMenor{
+    font-size: 15px;
+  }
+
+  .input-valor {
+    align-items: flex-end;
+    margin: 30px 15px 15px 15px;
+    height: 130px;
+    font-size: 35px;
+    overflow: hidden;
+    text-align: right !important;
+    color: #fff;
+    padding: 4px;
+    padding-top: 15px;
+    background-color: #0d7fa9;
+  }
+
+  .key {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+
+    .key li {
+      width: 55px;
+      height: 55px;
+      border-radius: 3px;
+      color: #fff;
+      background-color: #0d7fa9;
+      cursor: pointer;
+      float: left;
+      margin: 8px;
+      line-height: 55px;
+      text-align: center;
+    }
+
+      .key li:hover {
+        background-color: #BEF9F0;
+        color: #6C73FA;
+        transition: 0.2s;
+      }
+
+      .key li:active {
+        box-shadow: 0px 1px 1px 0px #444651;
+      }
+
+  .resultado {
+    background-color: #86ce84 !important;
+  }
+
+    .resultado:hover {
+      background-color: #BEF9F0 !important;
+      color: #6C73FA;
+      transition: 0.2s;
+    }
+
+  .operador {
+    background-color: #ff6869 !important;
+  }
+
+    .operador:hover {
+      background-color: #BEF9F0 !important;
+      color: #6C73FA;
+      transition: 0.2s;
+    }
+
+  .verificar {
+    width: 126px !important;
+  }
+</style>
